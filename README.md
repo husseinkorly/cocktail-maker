@@ -1,4 +1,4 @@
-#1:Project Name
+#Project Name
 TODO: Write a project Here
 
 ## Usage
