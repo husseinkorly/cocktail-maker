@@ -1,4 +1,4 @@
-#Project Name
+#Cocktail-Maker
 This project is focused on developing an automatic cocktail mixer that mixes up to three different types of drinks based on requested quantity of each drink.
 There are three beaglebone black used in this project to receive orders, store recipes, and control the solenoid valves.
 
