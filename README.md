@@ -9,7 +9,7 @@ There are three beaglebone black used in this project to receive orders, store r
 * Proximity IR sensor
   
 ##Circuit Board
-TODO: post an Image of the Circuit board
+![alt tag](https://github.com/husseinkorly/cocktail-maker/blob/master/imgs/bbbksetup.jpg)
 
 ## Contributing
 TODO
