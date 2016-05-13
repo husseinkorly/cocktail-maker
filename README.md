@@ -11,8 +11,7 @@ There are three beaglebone black used in this project to receive orders, store r
 ##Circuit Board
 ![alt tag](https://github.com/husseinkorly/cocktail-maker/blob/master/imgs/bbbksetup.jpg)
 
-## Contributing
-TODO
+## Usage
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
