@@ -1,4 +1,4 @@
-#Project Name
+#Cocktail-Maker
 This project is focused on developing an automatic cocktail mixer that mixes up to three different types of drinks based on requested quantity of each drink.
 There are three beaglebone black used in this project to receive orders, store recipes, and control the solenoid valves.
 
@@ -9,10 +9,9 @@ There are three beaglebone black used in this project to receive orders, store r
 * Proximity IR sensor
   
 ##Circuit Board
-TODO: post an Image of the Circuit board
+![alt tag](https://github.com/husseinkorly/cocktail-maker/blob/master/imgs/bbbksetup.jpg)
 
-## Contributing
-TODO
+## Usage
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
