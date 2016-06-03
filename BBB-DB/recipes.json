@@ -1,0 +1,30 @@
+{
+    "recipes": {
+        "blue": {
+            "blue": 1
+        },
+		"red": {
+            "red": 1
+        },
+		"yellow": {
+            "yellow": 1
+        },
+        "purple": {
+            "red": 3,
+            "blue": 1
+        },
+        "orange":{
+			"red": 4,
+            "yellow": 1
+		},
+        "brown": {
+            "red": 3,
+            "blue": 2,
+            "yellow": 3
+        },
+        "aqua": {
+            "green": 2,
+            "blue": 4
+        }
+    }
+}
