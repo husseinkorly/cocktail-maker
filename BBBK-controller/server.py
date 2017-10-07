@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-""" importing packages """
+#importing packages
 import socket
 import threading
-import Adafruit_BBIO.GPIO as GPIO 
+import Adafruit_BBIO.GPIO as GPIO
 from time import sleep
 
-""" Multi-threaded server class running on BBB-server,
-	BBBK-server controlling the solonids"""
-class Server(object):
+
+class Server():
+    """
+    Multi-threaded server class running on BBB-server,
+	BBBK-server controlling the solonids
+    """
     def __init__(self):
         self.host = ''
         self.port = 6432
@@ -20,35 +23,41 @@ class Server(object):
         self.sock.bind((self.host, self.port))
 
     def listen(self):
+        """
+        A method for incomming orders
+        """
     	#setting up the pins as an output pins
-        GPIO.setup(self.solenoids[0],GPIO.OUT)
-        GPIO.setup(self.solenoids[1],GPIO.OUT)
-        GPIO.setup(self.solenoids[2],GPIO.OUT)
-        
+        GPIO.setup(self.solenoids[0], GPIO.OUT)
+        GPIO.setup(self.solenoids[1], GPIO.OUT)
+        GPIO.setup(self.solenoids[2], GPIO.OUT)
+
         self.sock.listen(5)
         while True:
-            client, address = self.sock.accept()
+            client, _ = self.sock.accept()
             text = client.recv(self.buff)
-            #getting the order that comming from BBBK-UI
+            #reading the order that comming from BBBK-UI
             order = dict(itm.split("=") for itm in text.split(","))
-            for (k,v),s in zip(order.items(), self.solenoids):
-                t = threading.Thread(target = self.sendToSolenoids,args = (s,v))
-                #starting each of the solenoids
+            for (k, v), s in zip(order.items(), self.solenoids):
+                t = threading.Thread(target = self.send_to_solenoids,args = (s, v))
+                #starting each solinod
                 t.start()
                 t.join()
 
-    """ Running method for each solenoid """
-    def sendToSolenoids(self, sol, amount):
+    def send_to_solenoids(self, sol, amount):
+        """ Running mathod for each solenoid """
         try:
             if amount:
-                print "Solenoid " + sol + " is despensing: " + amount + "onces"
+                print("Using solenoid__" + sol + "to despense: " + amount + "onces")
                 GPIO.output(sol, GPIO.HIGH)
                 sleep(float(amount))
                 GPIO.output(sol, GPIO.LOW)
+
             else:
                 raise error('Client disconnected')
+        # need to define a new exception
         except:
             return False
+
 
 if __name__ == "__main__":
     Server().listen()
