@@ -18,6 +18,8 @@ There are three beaglebone black used in this project to receive orders, store r
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+[![Demo](http://img.youtube.com/vi/ypDjAAFomO4/0.jpg)](http://www.youtube.com/watch?v=ypDjAAFomO4)
+
 ## Credits
 * Hussein Koprly
 * Cameron Lanier
